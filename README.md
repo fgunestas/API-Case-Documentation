@@ -6,7 +6,7 @@ Verilen bilgiler doğrultusunda afiş hazırlayan API servisi.
 
 API'yi kullanmak için aşağıdaki endpoint'leri kullanabilirsiniz.
 
-### Endpoint: `/api/process_images`
+### Endpoint: `/api/AdGenerator`
 
 **HTTP Metodu:** POST
 
@@ -25,13 +25,20 @@ API'yi kullanmak için aşağıdaki endpoint'leri kullanabilirsiniz.
 ### Örnek Kullanım:
 
 ```bash
-curl -X POST -F "Image_=@image1.png" -F "Logo=@image2.png" -F "Prompt=a cup of coffee" -F "Renk1=#FFFFFF" -F "Renk2=#FFFFFF" -F "Punchline=Lorem ipsum dolor sit amet." -F "Button=Click me" http://localhost:5000/api/process_images
+curl -X POST -H "Content-Type: multipart/form-data" 
+-F "Image_=@C:\Users\shu\Downloads\Untitled.png;type=image/png" 
+-F "Logo=@C:\Users\shu\Desktop\Coca-Cola_logo.svg.png;type=image/png" 
+-F "Prompt=a cup of coffee" -F "Renk1=#81d8d0" -F "Renk2=#81d8d0" 
+-F "Punchline=Lorem ipsum dolor sit amet, consectetur adipiscing elit." 
+-F "Button=Click Me" 
+http://95.70.170.173:32703/api/Ad_Generator 
+--output output_image.png
 ```
 ### Örnek Yanıt:
 
 Bir PNG dosyası olarak yanıt verir. Yanıt, işlemler sonucunda oluşturulan resmi içerir.
 
 ### Notlar:
-*Image_* ve *Logo* parametreleri, binary olarak gönderilmelidir.
+*Image_* ve *Logo* parametreleri, file olarak gönderilmelidir.
 Parametreler JSON formatında değil, form verisi olarak gönderilmelidir.
-Yanıt olarak alınan PNG dosyası, isteğe bağlı olarak kaydedilebilir veya başka bir işleme tabi tutulabilir.
+Yanıt olarak alınan PNG dosyası, isteğe bağlı olarak kaydedilebilir.
