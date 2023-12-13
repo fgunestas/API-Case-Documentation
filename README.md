@@ -2,7 +2,7 @@
 
 Verilen bilgiler doğrultusunda afiş hazırlayan API servisi.
 
-Kullanılan önceden eğitilmiş model:https://huggingface.co/stabilityai/stable-diffusion-2-1
+Kullanılan önceden eğitilmiş model: https://huggingface.co/stabilityai/stable-diffusion-2-1
 
  
 ## API Kullanımı
